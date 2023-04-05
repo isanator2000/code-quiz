@@ -1,0 +1,28 @@
+* { margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid #C7D59F;   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+body {
+    background-color: #DADDD8;
+}
+
+p {
+    color: #8FB339;
+    font-size: 1.2em;
+}
+
+.big-box { 
+    padding: 15px;  
+}
+
+button {
+    outline: none;
+    background-color: #B7CE63;
+}
+
+.topbar p {
+    float: right;
+}
