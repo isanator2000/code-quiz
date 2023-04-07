@@ -1,3 +1,5 @@
+/*global settings*/
+
 * { margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,15 +16,35 @@ p {
     font-size: 1.2em;
 }
 
-.big-box { 
-    padding: 15px;  
-}
-
 button {
     outline: none;
     background-color: #B7CE63;
 }
 
+/*topbar*/ 
+
 .topbar p {
     float: right;
 }
+
+/*big container settings*/
+
+.big-box { 
+    padding: 15px;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: start;
+}
+
+/*main container*/
+.main-container {
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*header aka intro text to quiz*/
+
+/*questions and answers content*/
