@@ -63,4 +63,10 @@ h1, h2 {
     text-align: center;
 }
 
+.greeting button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
 /*questions and answers content*/
