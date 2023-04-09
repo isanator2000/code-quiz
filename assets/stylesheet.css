@@ -27,6 +27,10 @@ h1, h2 {
     
 }
 
+li {
+    list-style: none;
+}
+
 /*topbar*/ 
 
 .topbar p {
@@ -60,7 +64,6 @@ h1, h2 {
     margin-right: 10%;
     margin-left: 10%;
     background-color: beige;
-    display: none;
 }
 
 .greeting p {
@@ -75,5 +78,5 @@ h1, h2 {
 /*questions and answers content*/
 
 main {
-    display: block;
+    display: none;
 }
