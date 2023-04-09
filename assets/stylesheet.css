@@ -55,8 +55,10 @@ h1, h2 {
 }
 
 /*header aka intro text to quiz*/
-.greeting {
-    margin-top: 30vh;
+.greeting, main {
+    margin-top: 5vh;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .greeting p {
@@ -65,8 +67,11 @@ h1, h2 {
 
 .greeting button {
     display: block;
-    width: 50%;
     margin: 0 auto;
 }
 
 /*questions and answers content*/
+
+main {
+    display: none;
+}
