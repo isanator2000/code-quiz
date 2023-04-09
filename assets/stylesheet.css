@@ -59,6 +59,8 @@ h1, h2 {
     margin-top: 5vh;
     margin-right: 10%;
     margin-left: 10%;
+    background-color: beige;
+    display: none;
 }
 
 .greeting p {
@@ -73,5 +75,5 @@ h1, h2 {
 /*questions and answers content*/
 
 main {
-    display: none;
+    display: block;
 }
