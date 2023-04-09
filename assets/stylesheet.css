@@ -21,6 +21,12 @@ button {
     background-color: #B7CE63;
 }
 
+h1, h2 { 
+    color: #8FB339;
+    text-align: center;
+    
+}
+
 /*topbar*/ 
 
 .topbar p {
@@ -43,8 +49,29 @@ button {
     height: 100%;
     width: 50%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*header aka intro text to quiz*/
+.greeting, main {
+    margin-top: 5vh;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.greeting p {
+    text-align: center;
+}
+
+.greeting button {
+    display: block;
+    margin: 0 auto;
+}
 
 /*questions and answers content*/
+
+main {
+    display: none;
+}
