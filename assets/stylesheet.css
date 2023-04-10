@@ -38,7 +38,6 @@ li {
 }
 
 /*big container settings*/
-
 .big-box { 
     padding: 15px;
     height: 100vh; 
@@ -60,7 +59,7 @@ li {
 
 /*header aka intro text to quiz*/
 .greeting, main {
-    display: none;
+    display: block;
     margin-top: 5vh;
     margin-right: 10%;
     margin-left: 10%;
@@ -77,19 +76,26 @@ li {
 }
 
 /*quiz section*/
-
 main {
-    display: block;
+    display: none;
 }
 
 /*questions*/
-
 .question-box {
     display: none;
 }
 
 /*ending section*/
-
 .ending {
-    display: block;
+    display: none;
+}
+
+/*highscores section*/
+.highscores {
+    display: none;
+}
+
+.highscores ol {
+    overflow-y: scroll;
+    max-height: 400px;
 }
