@@ -1,5 +1,4 @@
 
-
 // get elements
 var intro = document.querySelector('.greeting');
 var startButton = document.querySelector(".greeting button");
@@ -124,10 +123,10 @@ var questions = [
       }
 
     function startTimer() {
-            let time = 300; // 5 minutes in seconds
-            let timer = setInterval(function() {
-              let minutes = Math.floor(time / 60);
-              let seconds = time % 60;
+            var time = 300; // 5 minutes in seconds
+            var timer = setInterval(function() {
+              var minutes = Math.floor(time / 60);
+              var seconds = time % 60;
               document.querySelector(".topbar p").textContent = `Timer ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
               time--;
           
@@ -154,7 +153,6 @@ var questions = [
                 answerButtons.dataset.correct = true;
               }
               answerButtons.addEventListener("click", selectAnswer);
-              answersEl.appendChild(answerButtons);
             });
           }
           
@@ -176,17 +174,14 @@ var questions = [
 
   function endQuiz() {
     // stop the timer, hide the quiz section, and show the ending section
-        clearInterval(timerInterval);
-        quizElement.style.display = "none";
-        var endingElement = document.getElementById("ending");
-        endingElement.style.display = "block";
-        var scoreElement = document.getElementById("final-score");
-        scoreElement.textContent = "Final score: " + score;
+        clearInterval(timer);
+        questionBox.style.display = "none";
+        endingSection.style.display = "block";
+        scoreText.textContent = "Final score: " + score;
       }
   
   function saveScore() {
     // save the player's initials and score to local storage
-        var initialsInput = document.getElementById("initials-input");
         var initials = initialsInput.value.trim(); // remove leading/trailing white space
         if (initials === "") {
           alert("Please enter your initials to save your score.");
@@ -203,10 +198,8 @@ var questions = [
   
   function showHighscores() {
     // retrieve the highscores from local storage and display them
-            var endingElement = document.getElementById("ending");
-            endingElement.style.display = "none";
-            var highScoresElement = document.getElementById("high-scores");
-            highScoresElement.style.display = "block";
+            endingSection.style.display = "none";
+            highScoresSection.style.display = "block";
   }
   
 
