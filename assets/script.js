@@ -162,17 +162,16 @@ var questions = [
           }
           
           function selectAnswer(event) {
-            var currentQuestion = questions[questionIndex];
             var selectedButton = event.target;
             var correct = selectedButton.dataset.correct;
             if (correct) {
               score++;
             } else {
-              timerElement -= 10;
+              timerElement= -10;
             }
-            if (currentQuestion< questions.length - 1) {
-              currentQuestion++;
-              displayQuestion(currentQuestion);
+            if (questionIndex< questions.length - 1) {
+              questionIndex++;
+              displayQuestion();
             } else {
               endQuiz();
             }
