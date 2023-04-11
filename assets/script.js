@@ -2,6 +2,7 @@
 // get elements
 var intro = document.querySelector('.greeting');
 var startButton = document.querySelector(".greeting button");
+var main = document.querySelector(".quiz-end-score");
 var questionBox = document.querySelector(".question-box");
 var questionText = document.querySelector(".question-box h2");
 var answerButtons = document.querySelectorAll(".question-box button");
@@ -13,6 +14,8 @@ var highscoresList = document.querySelector(".highscores ol");
 var viewHighscoresButton = document.querySelector(".topbar button:first-of-type");
 var timerElement = document.querySelector(".topbar p");
 var questionIndex = 0
+var score = 0
+
     
 
 // question data
@@ -114,7 +117,8 @@ var questions = [
         intro.style.display = 'none';
       
         // show the quiz section
-        questionBox.style.display = 'block';
+        main.style.display = 'block';
+        questionBox.style.display ='block';
       
         // start the timer
         startTimer();
@@ -125,14 +129,14 @@ var questions = [
 
     function startTimer() {
             var time = 300; // 5 minutes in seconds
-            var timer = setInterval(function() {
+            var timerElement = setInterval(function() {
               var minutes = Math.floor(time / 60);
               var seconds = time % 60;
               document.querySelector(".topbar p").textContent = `Timer ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
               time--;
           
               if (time < 0) {
-                clearInterval(timer);
+                clearInterval(timerElement);
                 endGame();
               }
             }, 1000);
@@ -147,23 +151,24 @@ var questions = [
             
             for (var i = 0; i < currentQuestion.answers.length; i++) {
               var answer = currentQuestion.answers[i];
-              var answerButtons = answerButtons[i];
-              answerButtons.innerText = answer.text;
-              answerButtons.classList.add("answer");
+              var singleanswerButton = answerButtons[i];
+              singleanswerButton.innerText = answer.text;
+              singleanswerButton.classList.add("answer");
               if (answer.correct) {
-                answerButtons.dataset.correct = true;
+                singleanswerButton.dataset.correct = true;
               }
-              answerButtons.addEventListener("click", selectAnswer);
+              singleanswerButton.addEventListener("click", selectAnswer);
             }
           }
           
           function selectAnswer(event) {
+            var currentQuestion = questions[questionIndex];
             var selectedButton = event.target;
             var correct = selectedButton.dataset.correct;
             if (correct) {
               score++;
             } else {
-              timeLeft -= 10;
+              timerElement -= 10;
             }
             if (currentQuestion< questions.length - 1) {
               currentQuestion++;
@@ -175,7 +180,7 @@ var questions = [
 
   function endQuiz() {
     // stop the timer, hide the quiz section, and show the ending section
-        clearInterval(timer);
+        clearInterval(timerElement);
         questionBox.style.display = "none";
         endingSection.style.display = "block";
         scoreText.textContent = "Final score: " + score;
@@ -203,6 +208,5 @@ var questions = [
             highScoresSection.style.display = "block";
   }
   
-
 // event listeners
   startButton.addEventListener("click", startQuiz);
