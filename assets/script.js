@@ -12,6 +12,7 @@ var highscoresSection = document.querySelector(".highscores");
 var highscoresList = document.querySelector(".highscores ol");
 var viewHighscoresButton = document.querySelector(".topbar button:first-of-type");
 var timerElement = document.querySelector(".topbar p");
+var questionIndex = 0
     
 
 // question data
@@ -137,23 +138,23 @@ var questions = [
             }, 1000);
           }
   
-          function displayQuestion(questionIndex) {
+          function displayQuestion() {
             var currentQuestion = questions[questionIndex];
-            var questionText = document.querySelector(".question-box h2");
             questionText.innerText = currentQuestion.question;
             
             var answerButtons = document.querySelectorAll(".question-box button");
             answerButtons.innerHTML = "";
             
-            currentQuestion.answers.forEach(function(answer) {
-              var answerButtons; 
+            for (var i = 0; i < currentQuestion.answers.length; i++) {
+              var answer = currentQuestion.answers[i];
+              var answerButtons = answerButtons[i];
               answerButtons.innerText = answer.text;
               answerButtons.classList.add("answer");
               if (answer.correct) {
                 answerButtons.dataset.correct = true;
               }
               answerButtons.addEventListener("click", selectAnswer);
-            });
+            }
           }
           
           function selectAnswer(event) {
@@ -164,9 +165,9 @@ var questions = [
             } else {
               timeLeft -= 10;
             }
-            if (currentQuestionIndex < questions.length - 1) {
-              currentQuestionIndex++;
-              displayQuestion(currentQuestionIndex);
+            if (currentQuestion< questions.length - 1) {
+              currentQuestion++;
+              displayQuestion(currentQuestion);
             } else {
               endQuiz();
             }
