@@ -97,7 +97,7 @@ var questions = [
           answers: [
             { text: "Converts a string to lowercase", correct: false },
             { text: "Converts a string to uppercase", correct: true },
-            { text: "Returns the length of a string", correct: true },
+            { text: "Returns the length of a string", correct: false },
             { text: "Reverses the characters in a string", correct: false },
           ],
         },
@@ -106,7 +106,7 @@ var questions = [
           answers: [
             { text: "7", correct: false },
             { text: "12", correct: true },
-            { text: "'34'", correct: true },
+            { text: "'34'", correct: false },
             { text: "NaN", correct: false },
           ],
         },
