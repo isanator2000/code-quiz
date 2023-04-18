@@ -162,7 +162,7 @@ var questions = [
             for (var i = 0; i < currentQuestion.answers.length; i++) {
               var answer = currentQuestion.answers[i];
               var singleanswerButton = answerButtons[i];
-              singleanswerButton.innerText = answer.text;
+              singleanswerButton.innerText = answer;
               singleanswerButton.classList.add("answer");
               if (answer.correct) {
                 singleanswerButton.dataset.correct = true;
