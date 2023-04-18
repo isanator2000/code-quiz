@@ -23,92 +23,102 @@ var questions = [
     {
         question: "What does the acronym 'DOM' stand for in JavaScript?",
         answers: [
-          { text: "Document Object Model", correct: true },
-          { text: "Data Object Manager", correct: false },
-          { text: "Desktop Operating Mode", correct: false },
-          { text: "Data Object Model", correct: false },
+          "Document Object Model",
+          "Data Object Manager",
+          "Desktop Operating Mode", 
+          "Data Object Model",
         ],
+        correct: 0
       },
       {
         question: "Which of the following is NOT a primitive data type in JavaScript?",
         answers: [
-          { text: "string", correct: false },
-          { text: "number", correct: false },
-          { text: "boolean", correct: false },
-          { text: "object", correct: true },
+          "string",
+          "number",
+          "boolean",
+          "object",
         ],
+        correct: 3
       },
       {
         question: "What is the result of the following code snippet: 5 + '3'?",
         answers: [
-          { text: "8", correct: false },
-          { text: "53", correct: true },
-          { text: "35", correct: false },
-          { text: "NaN", correct: false },
+          "8",
+          "53",
+          "35",
+          "NaN",
         ],
+        correct: 1
       },
       {
           question: "What is the purpose of the 'var' keyword in JavaScript?",
           answers: [
-            { text: "It declares a function", correct: false },
-            { text: "It declares a variable", correct: true },
-            { text: "It declares an object", correct: false },
-            { text: "It declares a loop", correct: false },
+            "It declares a function",
+            "It declares a variable",
+            "It declares an object", 
+            "It declares a loop", 
           ],
+          correct: 1
         },
         {
           question: "What does the method 'push' do in JavaScript arrays?",
           answers: [
-            { text: "Removes the first element", correct: false },
-            { text: "Adds a new element to the end", correct: true },
-            { text: "Adds a new element to the beginning", correct: false },
-            { text: "Removes the last element", correct: false },
+            "Removes the first element",
+            "Adds a new element to the end",
+            "Adds a new element to the beginning",
+            "Removes the last element",
           ],
+          correct: 1
         },
         {
           question: "What is the output of the following code snippet: console.log(typeof NaN)?",
           answers: [
-            { text: "Number", correct: true },
-            { text: "String", correct: false },
-            { text: "Boolean", correct: false },
-            { text: "Object", correct: false },
+            "Number",
+            "String",
+            "Boolean",
+            "Object",
           ],
+          correct: 0
         },
         {
           question: "Which of the following is an example of a comparison operator in JavaScript?",
           answers: [
-            { text: "=", correct: false },
-            { text: "==", correct: false },
-            { text: "===", correct: true },
-            { text: "*", correct: false },
+            "=",
+            "==", 
+            "===",
+            "*", 
           ],
+          correct: 2
         },
         {
           question: "What is the purpose of the 'if' statement in JavaScript?",
           answers: [
-            { text: "It declares a function", correct: false },
-            { text: "It loops over an array", correct: false },
-            { text: "It executes a block of code if a condition is true", correct: true },
-            { text: "It removes an element from an array", correct: false },
+            "It declares a function",
+            "It loops over an array",
+            "It executes a block of code if a condition is true",
+            "It removes an element from an array",
           ],
+          correct: 2
         },
         {
           question: "What does the method 'toUpperCase' do in JavaScript?",
           answers: [
-            { text: "Converts a string to lowercase", correct: false },
-            { text: "Converts a string to uppercase", correct: true },
-            { text: "Returns the length of a string", correct: false },
-            { text: "Reverses the characters in a string", correct: false },
+            "Converts a string to lowercase",
+            "Converts a string to uppercase", 
+            "Returns the length of a string",
+            "Reverses the characters in a string",
           ],
+          correct: 1
         },
         {
           question: "What is the result of the following code snippet: '3' * '4'?",
           answers: [
-            { text: "7", correct: false },
-            { text: "12", correct: true },
-            { text: "'34'", correct: false },
-            { text: "NaN", correct: false },
+            "7",
+            "12",
+            "'34'",
+            "NaN",
           ],
+          correct: 1
         },
     ];
 
@@ -163,8 +173,8 @@ var questions = [
           
           function selectAnswer(event) {
             var selectedButton = event.target;
-            var correct = selectedButton.dataset.correct;
-            if (correct) {
+            var correct = currentQuestion[questionIndex].correct;
+            if (selectedButton === correct) {
               score++;
             } else {
               timerElement= -10;
