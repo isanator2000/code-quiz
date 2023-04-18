@@ -173,7 +173,8 @@ var questions = [
           
           function selectAnswer(event) {
             var selectedButton = event.target;
-            var correct = currentQuestion[questionIndex].correct;
+            var currentQuestion = questions[questionIndex];
+            var correct = currentQuestion.correct;
             if (selectedButton === correct) {
               score++;
             } else {
