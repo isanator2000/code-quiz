@@ -137,20 +137,19 @@ var questions = [
         displayQuestion();
       }
 
-    function startTimer() {
-            var time = 300; // 5 minutes in seconds
-            var timerElement = setInterval(function() {
-              var minutes = Math.floor(time / 60);
-              var seconds = time % 60;
-              document.querySelector(".topbar p").textContent = `Timer ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-              time--;
-          
-              if (time < 0) {
-                clearInterval(timerElement);
-                endGame();
-              }
-            }, 1000);
+      function startTimer() {
+        var timeLeft = 300; // 5 minutes in seconds
+        var timerElement = setInterval(function() {
+          var minutes = Math.floor(timeLeft / 60);
+          var seconds = timeLeft % 60;
+          document.querySelector(".topbar p").textContent = `Timer ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+          timeLeft--;
+          if (timeLeft < 0) {
+            clearInterval(timerElement);
+            endGame();
           }
+        }, 1000);
+      }
   
           function displayQuestion() {
             var currentQuestion = questions[questionIndex];
@@ -178,7 +177,7 @@ var questions = [
             if (selectedButton === correct) {
               score++;
             } else {
-              timerElement= -10;
+              timeLeft= -10;
             }
             if (questionIndex< questions.length - 1) {
               questionIndex++;
