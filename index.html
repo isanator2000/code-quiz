@@ -7,69 +7,16 @@
     </head>
 
 <body>
-    <!--outer div begins here-->
-    <div class="big-box">
-        <!--timer and button to highscores aka topbar-->
-        <div class="topbar">
-            <button>View highscores here!</button>
-            <p>Timer 00:00</p>
+    <header>
+        <div class="header">
+            <div>
+                <button class="button" id="viewHighscores">View Highscores</button>
+            </div>
+            <div>
+                <p id="timer"> Time left: 90 seconds</p>
+            </div>
         </div>
-
-        <!--inner div-->
-        <div class="main-container"> 
-            <!--intro text to quiz-->
-            <header class="greeting">
-                <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit.
-                    Keep in mind that incorrect answers will penalize your scoretime by ten seconds!</p>
-                <button>START</button>
-            </header>
-
-            <!--quiz section-->
-            <main class="quiz-end-score">
-                <section class="question-box">
-                    <!--the texts will be modified in javascript-->
-                    <h2>Question</h2>
-                    <ul>
-                        <li><button class=>Answer A</button></li>
-                        <li><button class=>Answer B</button></li>
-                        <li><button class=>Answer C</button></li>
-                        <li><button class=>Answer D</button></li>
-                    </ul>
-                </section>
-                
-            <!--ending message when you finish the quiz-->
-                <section class="ending">
-                    <h2>The Quiz Ends Here!</h2>
-                    <p>Your score is 00</p>
-                    <div>
-                        <label for="">Enter your nickname</label>
-                        <Input type="text">
-                        <button>Submit</button>
-                    </div>
-                </section>
-            
-            <!--high scores section-->    
-                <section class="highscores">
-                    <h2>Highscores</h2>
-                    <!--the texts will be modified in javascript-->
-                    <ol>
-                        <li>Isa - 100</li>
-                        <li>Lucy - 100</li>
-                    </ol>
-                    <button>Go back</button>
-                    <button>Delete Highscores</button>
-                </section>
-
-            </main>
-
-        </div>
-
-
-
-
-    </div>
-
+    </header>
 
 
 </body>
